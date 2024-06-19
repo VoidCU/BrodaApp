@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import { Text, View, StyleSheet, Dimensions, TouchableOpacity,ActivityIndicator } from 'react-native';
+import { Text, View, TouchableOpacity,ActivityIndicator } from 'react-native';
 import { useRouter } from 'expo-router';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Font from 'expo-font';
@@ -23,79 +23,30 @@ export default function InfoScreen() {
   }
 
   return (
-    <LinearGradient
-      colors={['#000000', '#000000']}
-      style={styles.container}
+    <View
+      className="flex flex-1 justify-center items-center p-[20] bg-black "
     >
-      <View style={styles.textContainer}>
-        <Text style={styles.title}>BRODA</Text>
-        <Text style={styles.subtitle}>Welcome to Broda</Text>
-        <Text style={styles.subtext}>Please follow these rules:</Text>
-        <Text style={styles.text}>Be yourself.</Text>
-        <Text style={styles.subtext}>Please use your real photos and age.</Text>
-        <Text style={styles.text}>Stay safe</Text>
-        <Text style={styles.subtext}>Don't share personal and sensitive information.</Text>
-        <Text style={styles.text}>Encourage good behaviour</Text>
-        <Text style={styles.subtext}>Respect others and treat them as you would like to be treated. Report any bad behaviour.</Text>
+      <View  className='align-start'>
+        <Text className='text-[40px] color-[#5eddf0] font-["CustomFont"]'>BRODA</Text>
+        <Text className='text-[24px] color-white font-["CustomFont"]'>Welcome to Broda</Text>
+        <Text className='text-[14px] color-white mb-[30]'>Please follow these rules:</Text>
+        <Text className='text-[20px] color-white font-bold'>Be yourself.</Text>
+        <Text className='text-[14px] color-white mb-[30]'>Please use your real photos and age.</Text>
+        <Text className='text-[20px] color-white font-bold'>Stay safe</Text>
+        <Text className='text-[14px] color-white mb-[30]'>Don't share personal and sensitive information.</Text>
+        <Text className='text-[20px] color-white font-bold'>Encourage good behaviour</Text>
+        <Text className='text-[14px] color-white mb-[30]'>Respect others and treat them as you would like to be treated. Report any bad behaviour.</Text>
       </View>
-      <TouchableOpacity onPress={() => router.push('(tabs)/home')} style={styles.buttonContainer}>
+      <TouchableOpacity onPress={() => router.push('(tabs)/home')} className="mt-[20] w-[80%]" >
         <LinearGradient
           colors={['#5eddf0', '#65b6d8']}
-          style={styles.buttonGradient}
+          className="p-[15] rounded-[25px] items-center justify-center"
         >
-          <Text style={styles.buttonText}>I Agree</Text>
+          <Text className="text-[18] color-white font-bold">I Agree</Text>
         </LinearGradient>
       </TouchableOpacity>
-    </LinearGradient>
+    </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-    backgroundColor: '#000000',
-    
-  },
-  textContainer: {
-    alignItems: 'flex-start',
-    
-  },
-  title: {
-    fontSize: 40,
-    color: '#5eddf0',
-    fontFamily: 'CustomFont',
-  },
-  subtitle: {
-    fontSize: 24,
-    color: 'white',
-    fontFamily: 'CustomFont',
-  },
-  text: {
-    fontSize: 20,
-    color: 'white',
-    fontWeight: 'bold',
-  },
-  buttonContainer: {
-    marginTop: 20,
-    width: Dimensions.get('window').width * 0.85,
-    borderRadius: 25,
-  },
-  buttonGradient: {
-    padding: 15,
-    alignItems: 'center',
-    borderRadius: 25,
-  },
-  buttonText: {
-    fontSize: 18,
-    color: 'white',
-    fontWeight: 'bold',
-  },
-  subtext:{
-    fontSize: 14,
-    color: 'white',
-    marginBottom: 30,
-  }
-});
+

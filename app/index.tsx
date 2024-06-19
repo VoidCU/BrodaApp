@@ -26,71 +26,63 @@ export default function Index() {
 
   return (
     <LinearGradient
-      colors={['#5eddf0', '#65b6d8']}
-      style={styles.container}
+      colors={['#00FFFF', '#00BFFF']}
+      className="flex flex-1 justify-center items-center gap-[180] "
     >
       <View>
-        <Text style={styles.welcomeText}>BRODA</Text>
+        <Text className="text-[40px] color-white mb-20 font-['CustomFont']">BRODA</Text>
       </View>
-      <View style={styles.loginOptions}>
-      <Button
-        title="Login with Google"
-        buttonStyle={styles.myButton}
-        icon={
-          <Image
-          source={require('../assets/images/google.png')}
-          style={styles.buttonImage}
+      <View className="gap-y-[20]">
+        <View>
+        <Button
+          title="Login with Google"
+          buttonStyle={styles.myButton}
+          className='bg-red-500'
+          icon={
+            <Image
+              source={require('../assets/images/google.png')}
+              className="w-[24px] h-[24px]"
+            />
+          }
+          onPress={() => router.push('/infoScreen')}
         />
-        }
-        iconContainerStyle={styles.iconContainer}
-        onPress={() => router.push('/infoScreen')}
-      />
-      <Button
-        title="Login with Facebook"
-        buttonStyle={styles.myButton}
-        icon={
-          <Image
-          source={require('../assets/images/facebook.png')}
-          style={styles.buttonImage}
+        </View>
+        <View>
+        <Button
+          title="Login with Facebook"
+          buttonStyle={styles.myButton}
+          icon={
+            <Image
+              source={require('../assets/images/facebook.png')}
+              className="w-[24px] h-[24px]"
+            />
+          }
+          onPress={() => router.push('/infoScreen')}
         />
-        }
-        iconContainerStyle={styles.iconContainer}
-        onPress={() => router.push('/infoScreen')}
-      />
-      <Button
-        title="Login with Number"
-        buttonStyle={styles.myButton}
-        icon={
+        </View>
+        <View>
+        <Button
+          title="Login with Number"
+          buttonStyle={styles.myButton}
+          icon={
           <Icon
             name="phone"
             type="font-awesome"
             size={24}
             color="white"
-            style={styles.myIcon}
+            className="mr-2"
           />
-        }
-        iconContainerStyle={styles.iconContainer}
-        onPress={() => router.push('/infoScreen')}
-      />
+          }
+          onPress={() => router.push('/infoScreen')}
+        />
+        </View>
+        
       </View>
     </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: 180,
-    fontFamily: 'CustomFont',
-  },
-  welcomeText: {
-    fontSize: 40,
-    color: 'white',
-    marginBottom: 20,
-    fontFamily: 'CustomFont',
-  },
   myButton: {
     backgroundColor: 'black',
     width: Dimensions.get('window').width * 0.85,
@@ -100,18 +92,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     gap: 10,
     paddingLeft: 30,
-  },
-  myIcon: {
-    marginRight: 10,
-  },
-  loginOptions: {
-    gap: 20,
-  },
-  buttonImage: {
-    width: 24,
-    height: 24,
-  },
-  iconContainer: {
-    marginRight: 10,
   },
 });
